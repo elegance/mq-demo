@@ -68,3 +68,21 @@ public void receive(String message) {
 
 
 
+### RabbitMQ
+
+#### 名词解释
+
+Exchanges: 交换机
+
+Queues: 队列
+
+**RabbitMQ 只有Queue ，没有Topic，通过Exchange 与 Queue 的组合来实现 Tpoic 所具备的功能，Exchange 与 Queue 之间有一个 Binding 关系**
+
+Producer ---> Special Exchange (根据Binding来路由消息)
+
+#### 消息模式
+
+* **单播：如果 Exchange 与 Queues 间的Binding 各部相同，消息将被路由到其中的一个Queue，随后被一个Consumer消费。**
+* **广播：如果 Exchagne 与 Queues 间的Binding 完全相同，消息将被路由到每个Queue，随后被每个Consumer消费**
+
+**补充：RabbitMQ 提供了一个默认的 Exchange(名词 AMQP default), 简单情况下使用默认即可，如果我们需要广播(发布订阅)才会使用自定义 Exchange.**

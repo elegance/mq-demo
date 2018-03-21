@@ -16,6 +16,8 @@
     <modules>
         <module>active-mq-server</module>
         <module>active-mq-client</module>
+        <module>rabbitmq-hello-server</module>
+        <module>rabbitmq-hello-client</module>
     </modules>
 
 
